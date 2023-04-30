@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.section_title{
+    height: 30px;
+    font-size:36px;
+    margin-top: 80px;
+}
+.section_line{
+    margin-top: 25px;
+    height: 3px;
+    margin-bottom: 50px;
+    width: 105px;
+    display: inline-block;
+    --tw-bg-opacity: 1;
+    background-color: rgb(27 27 27 / var(--tw-bg-opacity)); 
+}
+.pauta{
+    font-family: 'Patua One', cursive;
+}
+@media (max-width : 767px) {
+    .NavBarPC{
+        display : none;
+    }
+}
+@media (min-width : 768px) {
+    .NavBarMobile{
+        display: none;
+    }
+}
