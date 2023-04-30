@@ -29,7 +29,7 @@ const CustomLink = ({href, title, pos, className=""}) => {
 const CustomMobileLink = ({href, title, pos, className=""}) => {
     
     return(
-        <Link href={href} onClick={clickFunction} className={`${className} relative group  py-4 text-light w-[150px]`}>
+        <Link href={href} onClick={clickFunction} className={`${className} relative group px-5 py-4 text-light w-[150px]`}>
             {title}
         </Link>
     )

@@ -42,15 +42,28 @@ const About = () => {
     <section id='about' className='flex flex-col justify-center items-center text-center'>
       <h1 className='section_title'>About Us</h1>
       <span className="section_line">&nbsp;</span>
-      <div className='flex m-[30px] flex-wrap '>
-        <Image src={logo1} height={150} className=' mr-10' />
-        <Image src={logo2} height={120} width={120} />
+      <div className='flex m-[30px] flex-wrap items-center justify-center '>
+        <Image src={logo1} height={150} className=' mr-10 transition-all ease-in-out duration-200 hover:-rotate-6' />
+        <Image src={logo2} height={120} width={120} className='transition-all ease-in-out duration-200 hover:-rotate-6' />
       </div>
-      <p className=' mb-[100px] text-centerf font-light'>
-        서울대학교 사회공헌단 VESS는 뭐의 줄임말이며 몇년도부터 시작했고 뭐시기 뭐시기를 했으며
-        <br></br>
-        몇년도부터 시작한 우리는 
-      </p>
+      <div className=' max-w-[700px] grow-0 mt-[20px] mb-[70px] text-center font-light break-keep'>
+        서울대학교 사회공헌단 VESS는 Volunteering Engineers & Scientists of SNU의 약자로 2015도부터 활동을 시작한 
+        <span className=' font-bold'> 공과대학 소속의 적정기술 동아리</span>입니다.
+        <br /><br />
+        VESS는 국내외 소외계층을 위한 적정기술 개발하고 사회 문제를 해결하기 위한 프로젝트를 진행합니다. 전공, 단과대와 무관하게 
+        사회 문제에 관심이 많고, 소외계층을 기술적 방식으로 돕는 활동을 진행하고 싶은 사람 <span className=' font-semibold'>누구나 참여 가능합니다. </span>
+        학기 말에는 프로젝트를 기반으로 다양한 공모전에 참여하며, 지금까지 
+        SNU 사회공헌 PLUS+ 경진대회, 창의설계 온라인 경진대회 등 다양한 대회에서 우수한 성적을 거두었습니다.
+        <br /><br />
+        VESS가 추구하는 방향성은 아래 3가지로 정리할 수 있습니다.<br />
+        <div className='flex items-center justify-center'>
+          <div className=' max-w-[350px] text-left font-medium'>
+          - 적정기술에 대한 올바른 이해와 실천<br />
+          - 소외계층의 삶의 질 향상<br />
+          - 정기적인 동아리 프로그램을 통한 부원 간 활발한 친목<br />
+          </div>
+        </div>
+      </div>
     </section>
   )
 }

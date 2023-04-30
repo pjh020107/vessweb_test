@@ -3,10 +3,11 @@
 import { useState } from "react";
 import { content } from "../../tailwind.config";
 import Image from "next/image";
+import Link from "next/link";
 
 const ActivityDiv = ({name, summary, image, content,className=""}) => {
     return (
-        <div className={`${className} mb-[50px] w-[200px] mx-4 rounded-xl flex flex-col items-center 
+        <div className={`${className} mb-[25px] w-[200px] mx-4 rounded-xl flex flex-col items-center 
         transition-all ease-in-out duration-200 hover:-translate-x-2 hover:-translate-y-2 hover:shadow-2xl hover:bg-neutral-200`}>
             <Image src={`/${image}`} width={65} height={65} className=" mt-5 mb-5 "/>
             <h2 className="font-semibold text-2xl">{name}</h2>
@@ -56,8 +57,8 @@ const What = () => {
             name : "AT Lecture",
             summary : "중,고등학교 적정기술 강연",
             image : "3.png",
-            content : "적정기술 강연은 적정기술 개념 전파와 관심 증대를 목적으로 진행하며 \
-            현재까지 약 20개의 학교에서 강연을 진행하였습니다. 동아리 부원의 경우 1회 이상 의무로 참여해야 합니다. "
+            content : "적정기술(Appropriate Technology) 강연은 적정기술 개념 전파와 관심 증대를 목적으로 진행하며 \
+            현재까지 약 20개의 학교에서 강연을 진행하였습니다."
         },
         {
             name : "Social Acitity",
@@ -73,7 +74,7 @@ const What = () => {
         console.log(activeTeam);
     };
     return (
-    <section id="what" className="flex flex-col justify-center items-center text-center bg-grey">
+    <section id="what" className=" flex flex-col justify-center items-center text-center bg-grey">
         <h1 className="section_title">What We Do</h1>
         <span className="section_line">&nbsp;</span>
         <section className=" inline-flex w-full justify-center text-center mb-[20px] flex-wrap">
@@ -100,6 +101,13 @@ const What = () => {
             <div className=" p-20 h-[200px] ">
                     {teamList[activeTeam].summary}
             </div>
+        </div>
+        <div className=" w-full flex flex-row-reverse ">
+            <Link href="https://www.notion.so/VESS-d7f751596ebb4b78b8244fde4cb3c0c2" 
+            className=" font-extralight mr-[50px] mb-[30px] underline decoration-1 
+            underline-offset-[4px] text-sm">
+                    View More
+            </ Link>
         </div>
     </section>)
 }

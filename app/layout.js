@@ -1,6 +1,6 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
-import { Montserrat } from 'next/font/google'
+import { Montserrat} from 'next/font/google'
 
 import Head from 'next/head'
 
@@ -10,9 +10,8 @@ const montserrat = Montserrat({
 })
 
 const inter = Inter({ subsets: ['latin'] })
-
 export const metadata = {
-  title: 'VESS',
+  title: '서울대학교 기술나눔단 VESS',
 }
 
 export default function RootLayout({ children }) {
