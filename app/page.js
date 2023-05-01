@@ -42,11 +42,11 @@ const About = () => {
     <section id='about' className='flex flex-col justify-center items-center text-center'>
       <h1 className='section_title'>About Us</h1>
       <span className="section_line">&nbsp;</span>
-      <div className='flex m-[30px] flex-wrap items-center justify-center '>
+      <div className='flex flex-wrap items-center justify-center '>
         <Image src={logo1} height={150} className=' mr-10 transition-all ease-in-out duration-200 hover:-rotate-6' />
         <Image src={logo2} height={120} width={120} className='transition-all ease-in-out duration-200 hover:-rotate-6' />
       </div>
-      <div className=' max-w-[700px] grow-0 mt-[20px] mb-[70px] text-center font-light break-keep'>
+      <div className=' max-w-[700px] px-8 grow-0 mt-[20px] mb-[70px] text-center font-light break-keep'>
         서울대학교 사회공헌단 VESS는 Volunteering Engineers & Scientists of SNU의 약자로 2015도부터 활동을 시작한 
         <span className=' font-bold'> 공과대학 소속의 적정기술 동아리</span>입니다.
         <br /><br />
