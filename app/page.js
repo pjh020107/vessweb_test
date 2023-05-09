@@ -2,6 +2,9 @@ import Image from 'next/image'
 import logo1 from '../public/logo1.png'
 import logo2 from '../public/logo2.png'
 import {ClientFirst,ClientSecond} from './components/ClientComponents'
+import {LoginBtn, LogoutBtn} from './components/LoginBtn'
+import { authOptions } from "@/pages/api/auth/[...nextauth].js"
+import { getServerSession } from "next-auth"
 
 export default function Home() {
   return (
@@ -15,7 +18,8 @@ export default function Home() {
   )
 }
 
-const HomeImage = () => {
+const HomeImage = async () => {
+  let session = await getServerSession(authOptions)
   return(
     <>
       <div>
@@ -28,7 +32,8 @@ const HomeImage = () => {
           <h1 className={'pauta text-white text-8xl tracking-tight mb-2 font-extrabold'}>V E S S </h1>
           <h2 className={'pauta text-back font-light'}>Volunteering Engineers & Scientists of SNU</h2>
           <div className=' relative top-5'>
-            <a href='/login' className=' inline-block text-center w-[93px] mr-10 px-4 py-1 font-mono rounded-lg text-sm font-thin text-stone-300 bg-gray-800/[0.8]'>LOG IN</a>
+            {session ? <LogoutBtn/>:<LoginBtn/>}
+            {session ? <a href='/post' className='inline-block text-center w-[50px] mr-10 px-4 py-1 rounded-lg text-sm bg-gray-800/[0.8]' >📝</a>:null}
             <a href='https://forms.gle/pQXjzLaYChTiASxf9' className=' inline-block text-center w-[93px] px-4 py-1 rounded-lg font-mono text-sm font-thin text-stone-300 bg-gray-800/[0.8]'>SIGN IN</a>
           </div>
         </section>
