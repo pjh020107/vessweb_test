@@ -6,7 +6,7 @@ export default async function Home () {
     const db = (await connectDB).db('vessweb');
     let result = await db.collection('post').find().toArray();
     return (
-        <div className="m-5 flex flex-col">
+        <div className="m-5 flex flex-col grow">
             <WriteBtn />
             <ListItem result={result} />
         </div>

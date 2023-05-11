@@ -1,6 +1,7 @@
 'use client'
 import Link from "next/link"
-import { usePathname } from "next/navigation";
+import { usePathname} from "next/navigation";
+import { useEffect } from "react";
 
 const TeamLink = ({teamname, path, className, accurate = false, router_pathname}) => {
     const teamstyle = ` m-2 pl-10 hover:bg-slate-500 transition-all rounded-xl ${className}`;
@@ -21,8 +22,7 @@ const TeamLink = ({teamname, path, className, accurate = false, router_pathname}
     )
 }
 
-export default async function TeamNavBar() {
-    const router = usePathname();
+function TeamNavBarComp({router}) {
     return (
         <div className="items-stretch self-stretch z-50 flex flex-col text-light bg-blue-950/[0.8] font-bold text-lg w-[140px]">
             <TeamLink teamname={'All'} path='/post' className='m-2 mt-5 mb-5 pl-2 ' accurate={true} />
@@ -43,5 +43,15 @@ export default async function TeamNavBar() {
                 </div>
             </div>
         </div>
+    )
+}
+export default function TeamNavBar() {
+    const temp = usePathname();
+    let pathname = temp;
+    useEffect(()=>{
+        pathname=temp;
+    },[temp])
+    return (
+        <TeamNavBarComp router={pathname}/>
     )
 }
