@@ -3,14 +3,18 @@
 import Link from "next/link";
 import { Router } from "next/router";
 
-const PostListDiv = ({_id, title, content}) => {
+const PostListDiv = ({_id, title, content, semester, team}) => {
     return(
-        <div>
-            <Link href={`/post/${_id}`}>
+        <div className="mb-5">
+            <Link href={`/post/${semester}th${team}/${_id}`}>
                 <h1>{title}</h1>
                 <h4>{content}</h4>
             </Link>
-            <Link href={`/post/edit/${_id}`}>✏️</Link>
+        </div>
+    )
+}
+/*
+<Link href={`/post/${semester}th${team}/${_id}/edit`}>✏️</Link>
             <button onClick={(e)=>{
                 fetch('/api/post/delete',{method : 'POST', body:_id})
                 .then((r)=> r.json())
@@ -18,19 +22,16 @@ const PostListDiv = ({_id, title, content}) => {
                     alert(result)
                     e.target.parentElement.style.display = 'none'
                 })
-            }} className=" ml-10">🗑️</button>
-        </div>
-    )
-}
-
-export default function ListItem(props){
+            }} className=" ml-10">🗑️</button> 
+*/ 
+export default function ListItem({result}){
     return(
-        <div>
+        <>
             {
-                props.result.map((item)=>{
+                result.map((item)=>{
                     return PostListDiv(item);
                 })
             }
-        </div>
+        </>
     )
 }

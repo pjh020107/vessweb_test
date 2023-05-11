@@ -18,7 +18,6 @@ export const authOptions = {
       //직접 DB에서 아이디,비번 비교하고 
       //아이디,비번 맞으면 return 결과, 틀리면 return null 해야함
       async authorize(credentials) {
-        console.log(credentials);
         let db = (await connectDB).db('vessweb');
         let user = await db.collection('user').findOne({username : credentials.username})
         //vess8th!($2b$10$tveah6arzm33qzUYaeGGi.4zwQ.wWsCegZSJiopAbdWmqQiwSeBNq)
@@ -47,18 +46,23 @@ export const authOptions = {
     jwt: async ({ token, user }) => {
       if (user) {
         token.user = {};
+        token.user.username = user.username
         token.user.name = user.name
-        token.user.email = user.email
+        token.user.role = user.role
+        token.user.semester= user.semester
+        token.user.group = user.group
+        token.user.team = user.team
+        token.user.teamname = user.teamname
       }
       return token;
     },
     //5. 유저 세션이 조회될 때 마다 실행되는 코드
     session: async ({ session, token }) => {
-      session.user = token.user;  
+      session.user = token.user;
       return session;
     },
-    redirect : async() => {
-        return '/';
+    signIn : async (temp)=>{
+        return temp;
     }
     
   },
