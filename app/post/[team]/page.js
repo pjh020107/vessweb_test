@@ -8,9 +8,9 @@ export default async function teampage(props){
     const db = (await connectDB).db('vessweb');
     let result = await db.collection('post').find({"semester":semester,"team":team}).toArray();
     return(
-        <>
+        <div className="m-5 flex flex-col grow">
             <WriteBtn />
             <ListItem result={result} />
-        </>
+        </div>
     )
 }

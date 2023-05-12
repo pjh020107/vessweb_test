@@ -1,29 +1,22 @@
-'use client'
-
 import Link from "next/link";
-import { Router } from "next/router";
 
-const PostListDiv = ({_id, title, content, semester, team}) => {
+const PostListDiv = (item) => {
     return(
-        <div className="mb-5">
-            <Link href={`/post/${semester}th${team}/${_id}`}>
-                <h1>{title}</h1>
-                <h4>{content}</h4>
+        <div className="mb-10 ml-4 p-5 border-neutral-900 
+        border rounded-3xl max-w-[500px] shadow-lg
+        transition-all ease-in-out duration-200 hover:-translate-x-0 
+        hover:-translate-y-2 hover:shadow-2xl hover:bg-neutral-200">
+            <Link href={`/post/${item.semester}th${item.team}/${item._id}`} className="flex flex-col">
+                <h1>{item.title}</h1><br></br>
+                <div className=" flex justify-between">
+                    <span>{item.teamname}({item.FirstAuthor})</span>
+                    <span>{item.firstCreated}</span>
+                </div>
             </Link>
         </div>
     )
 }
-/*
-<Link href={`/post/${semester}th${team}/${_id}/edit`}>✏️</Link>
-            <button onClick={(e)=>{
-                fetch('/api/post/delete',{method : 'POST', body:_id})
-                .then((r)=> r.json())
-                .then((result)=>{ 
-                    alert(result)
-                    e.target.parentElement.style.display = 'none'
-                })
-            }} className=" ml-10">🗑️</button> 
-*/ 
+1
 export default function ListItem({result}){
     return(
         <>
