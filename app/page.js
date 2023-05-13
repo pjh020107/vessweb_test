@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import logo1 from '../public/logo1.png'
 import logo2 from '../public/logo2.png'
+import InstagramLogo from '../public/Instagram-Icon.png'
 import {ClientFirst,ClientSecond} from './components/ClientComponents'
 import {LoginBtn, LogoutBtn} from './components/LoginBtn'
 import { authOptions } from "@/pages/api/auth/[...nextauth].js"
@@ -78,13 +79,16 @@ const Contact = () => {
     <section id='contact' className='flex flex-col justify-center items-center text-center bg-grey'>
       <h1 className='section_title' style={{marginTop:"30px"}}>Contact</h1>
       <span className="section_line" style={{marginBottom:"20px"}}>&nbsp;</span>
-      <span>
+      <span className=' mb-4 font-light '>
         Address : Seoul National Univ. Building 36. Unit B114
       </span>
       <a href='https://www.instagram.com/p/ComAxiNJBCY/?igshid=YmMyMTA2M2Y='>
-        Instagram : @snu_vess
+        <span className=' flex items-center mb-4 font-light '>
+          <Image src={InstagramLogo} height={20} className=' mx-1 '/>
+          Instagram : @snu_vess
+        </span>
       </a>
-      <h4 className=' mb-5'>Developed By PJH (7,8th semester)</h4>
+      <h4 className=' mb-8 font-light'>Developed By PJH (7,8th semester)</h4>
     </section>
   )
 }

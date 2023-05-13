@@ -27,7 +27,8 @@ export default async function Write(){
                 </div>
             </form>
             <button type="submit" form="write" 
-            className=" px-5 text-sm border border-slate-500 mt-5 bg-gray-300 hover:bg-gray-800 hover:text-light transition-all duration-200">Upload Post</button>
+            className=" px-5 text-sm border border-slate-500 mt-5 bg-gray-300 
+            hover:bg-gray-800 hover:text-light transition-all duration-200">Upload Post ✎</button>
         </div>
     )
 }
