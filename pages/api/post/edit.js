@@ -28,7 +28,13 @@ export default async function handler(request, response){
     }
 }
 const getTime = () => {
-    const today = new Date();
+    const curr = new Date();
+    const utc = 
+        curr.getTime() + 
+        (curr.getTimezoneOffset() * 60 * 1000);
+    const KR_TIME_DIFF = 9 * 60 * 60 * 1000;
+    const today = 
+        new Date(utc + (KR_TIME_DIFF));
 
     const dateString = today.getFullYear() + '-' + ('0' + (today.getMonth() + 1)).slice(-2)  
     + '-' + ('0' + today.getDate()).slice(-2);
