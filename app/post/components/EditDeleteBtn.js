@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 export default function EditDeleteBtn ({result}){
     const router = useRouter();
     return (
-        <div>  
+        <div className=" mb-10">   
             <Link href={`/post/${result.semester}th${result.team}/${result._id}/edit`}>✏️</Link>
                 <button onClick={(e)=>{
                     fetch('/api/post/delete',{method : 'POST', body:result._id})

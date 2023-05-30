@@ -28,7 +28,7 @@ export default async function Edit(props){
                 </div>
             </form>
             <button type="submit" form="edit" 
-            className=" px-5 text-sm border border-slate-500 mt-5 bg-gray-300 hover:bg-gray-800 hover:text-light transition-all duration-200">Edit Post</button>
+            className=" px-5 mb-10 text-sm border border-slate-500 mt-5 bg-gray-300 hover:bg-gray-800 hover:text-light transition-all duration-200">Edit Post</button>
         </div>
     )
 }
