@@ -14,7 +14,7 @@ export default async function handler(request, response){
         const timeval = getTime();
         request.body.lastModified = timeval;
         request.body.firstCreated = timeval;
-        //let result = await db.collection('post').insertOne(request.body)
+        let result = await db.collection('post').insertOne(request.body)
         return response.redirect(302,'/post')
     }
 }
