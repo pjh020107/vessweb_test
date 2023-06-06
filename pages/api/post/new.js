@@ -1,20 +1,12 @@
 import { connectDB } from "@/util/database";
-export const config = {
-    api: {
-        bodyParser: {
-            sizeLimit: '4mb' // Set desired value here
-        }
-    }
-}
 export default async function handler(request, response){
     if(request.method == 'POST'){
-        console.log(request);
         const db = (await connectDB).db('vessweb');
         let newpost = request.body;
         const timeval = getTime();
         request.body.lastModified = timeval;
         request.body.firstCreated = timeval;
-        //let result = await db.collection('post').insertOne(request.body)
+        let result = await db.collection('post').insertOne(request.body)
         return response.redirect(302,'/post')
     }
 }

@@ -1,13 +1,12 @@
 'use client'
 
 import { signIn, signOut} from 'next-auth/react'
-import CredentialsProvider from "next-auth/providers/credentials";
 import Image from "next/image"
 import exit from '../../public/exit.png'
 
 function LoginBtn(){
     return(
-        <button onClick={()=>{signIn(CredentialsProvider,{callbackUrl:"/post"})}} 
+        <button onClick={()=>{signIn({callbackUrl:"/post"})}} 
         className=' inline-block text-center w-[93px] mr-10 px-4 py-1 font-mono
         rounded-lg text-sm font-thin text-stone-300 bg-gray-800/[0.8]'>Log In</button>
     )

@@ -13,7 +13,6 @@ export default function EditDeleteBtn ({result}){
                     .then((r)=> r.json())
                     .then((result)=>{ 
                         alert(result)
-                        router.push('/post');
                     })
                 }} className=" ml-10">🗑️</button> 
         </div>

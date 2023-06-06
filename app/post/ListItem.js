@@ -16,7 +16,7 @@ const PostListDiv = (item) => {
         </div>
     )
 }
-1
+
 export default function ListItem({result}){
     return(
         <>

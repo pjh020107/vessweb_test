@@ -11,7 +11,7 @@ export const authOptions = {
       name: "credentials",
         credentials: {
           username: { label: "Username", type: "text" },
-          password: { label: "password", type: "password" },
+          password: { label: "Password", type: "password" },
       },
 
       //2. 로그인요청시 실행되는코드
@@ -20,7 +20,6 @@ export const authOptions = {
       async authorize(credentials) {
         let db = (await connectDB).db('vessweb');
         let user = await db.collection('user').findOne({username : credentials.username})
-        //vess8th!($2b$10$tveah6arzm33qzUYaeGGi.4zwQ.wWsCegZSJiopAbdWmqQiwSeBNq)
         if (!user) {
           console.log('No Id Information');
           return null
@@ -61,10 +60,6 @@ export const authOptions = {
       session.user = token.user;
       return session;
     },
-    signIn : async (temp)=>{
-        return temp;
-    }
-    
   },
 
   adapter: MongoDBAdapter(connectDB),

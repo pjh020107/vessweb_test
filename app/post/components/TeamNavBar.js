@@ -25,7 +25,7 @@ const TeamLink = ({teamname, path, className, accurate = false, router_pathname}
 function TeamNavBarComp({router}) {
     return (
         <div className="items-stretch self-stretch z-50 flex flex-col text-light bg-blue-950/[0.8] font-bold text-lg w-[140px]">
-            <TeamLink teamname={'All'} path='/post' className='m-2 mt-5 mb-5 pl-2 ' accurate={true} />
+            <TeamLink teamname={'All'} path='/post' className='m-2 mt-5 mb-5 pl-2 ' router_pathname={router} accurate={true} />
             <div className="mb-5">
                 <div className=" ml-4 mb-2">7.5th VESS</div>
                 <div className=" flex flex-col font-medium">

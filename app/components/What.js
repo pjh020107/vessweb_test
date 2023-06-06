@@ -69,9 +69,7 @@ const What = () => {
         },
     ]
     const selector = (event) => {
-        console.log(event.target.innerText);
         setActiveTeam(teamList.findIndex((item)=>{return item.name === event.target.innerText}));
-        console.log(activeTeam);
     };
     return (
     <section id="what" className=" flex flex-col justify-center items-center text-center bg-grey">
